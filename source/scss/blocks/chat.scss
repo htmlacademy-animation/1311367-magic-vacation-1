@@ -185,4 +185,16 @@
 
 .chat__footer {
   margin-top: auto;
+
+  .form__field {
+    margin-left: auto;
+    animation: widthChatFieldRightToLeft;
+    animation-duration: $m-animation-time;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  .form__button {
+    flex-grow: 0;
+  }
 }

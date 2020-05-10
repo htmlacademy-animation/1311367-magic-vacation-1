@@ -1,0 +1,41 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes translateYText {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translateXText {
+  from {
+    transform: translateX(20px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes widthChatFieldRightToLeft {
+  from {
+    width: 0;
+    padding: 0;
+  }
+
+  to {
+    width: calc(100% - 21rem);
+    padding: 0 5.6rem;
+  }
+}
