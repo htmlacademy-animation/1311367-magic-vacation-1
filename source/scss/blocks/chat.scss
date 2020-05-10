@@ -188,7 +188,7 @@
 
   .form__field {
     margin-left: auto;
-    animation: widthChatFieldRightToLeft;
+    animation: widthChatField;
     animation-duration: $m-animation-time;
     animation-timing-function: ease;
     animation-fill-mode: both;
