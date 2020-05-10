@@ -191,7 +191,7 @@
     animation: widthChatFieldRightToLeft;
     animation-duration: $m-animation-time;
     animation-timing-function: ease;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
   }
 
   .form__button {
