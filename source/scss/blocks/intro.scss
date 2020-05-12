@@ -93,6 +93,11 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  animation-name: fadeIn, translateYText;
+  animation-duration: $max-animation-time;
+  animation-delay: $s-animation-time;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -115,6 +120,7 @@
 
   p {
     margin: 0;
+    transform: translateY(10px);
   }
 
   svg {

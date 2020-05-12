@@ -39,6 +39,7 @@
   &:nth-child(even) {
     .slider__item-text {
       align-self: flex-end;
+      animation-delay: $m-animation-time;
 
       @media (max-width: $mobile) and (orientation: landscape) {
         align-self: flex-start;
@@ -197,6 +198,8 @@
   &:focus {
     color: $c-purple;
     outline: none;
+    border: 1px solid $c-purple;
+    border-radius: 50%;
 
     &::before {
       border-color: $c-purple;
@@ -274,5 +277,16 @@
       height: 0.4rem;
       background-color: $c-light;
     }
+  }
+}
+
+.swiper-slide-active,
+.swiper-slide-next {
+  .slider__item-text {
+    animation-name: fadeIn, translateXText;
+    animation-duration: $min-animation-time;
+    animation-delay: $s-animation-time;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
   }
 }
