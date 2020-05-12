@@ -167,6 +167,12 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       margin: 0 1.25rem;
     }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) .social-block__link {
+        transition-delay: (0.1s * $i);
+      }
+    }
   }
 }
 
@@ -220,8 +226,6 @@
   }
 
   &--fb {
-    transition-delay: 0.1s;
-
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -234,8 +238,6 @@
   }
 
   &--insta {
-    transition-delay: 0.2s;
-
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -248,8 +250,6 @@
   }
 
   &--vk {
-    transition-delay: 0.3s;
-
     svg {
       width: 1.7rem;
       height: 1rem;
