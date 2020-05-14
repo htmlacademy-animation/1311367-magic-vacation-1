@@ -5,6 +5,8 @@
   right: 0;
   padding: 2.7rem 0;
   z-index: 10;
+  opacity: 0;
+  transition: opacity $animation-layout-duration cubic-bezier(0, 0, 0, 1);
 
   @media (min-width: $stop-scaling) {
     padding: 27px 0;
@@ -35,6 +37,8 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-15px);
+  transition: transform $animation-layout-duration cubic-bezier(0, 0, 0, 1);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -269,7 +273,8 @@
 
     &.active {
       &::after {
-        width: 100%;
+        left: 0;
+        transition-delay: $min-animation-time;
       }
     }
 
