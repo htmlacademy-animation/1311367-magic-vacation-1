@@ -63,6 +63,32 @@ body {
       overflow: hidden;
     }
   }
+
+  &.page-loaded {
+    .page-header {
+      opacity: 1;
+
+      &__logo {
+        transform: translateX(0);
+      }
+
+      &__menu {
+        a {
+          &.active {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .screen {
+      &__footer {
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 a {
