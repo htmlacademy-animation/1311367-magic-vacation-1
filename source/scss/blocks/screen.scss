@@ -290,6 +290,19 @@
   }
 }
 
+.screen__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  content: "";
+  background-color: $c-dark;
+  transform: translateY(100%);
+}
+
 .screen--story {
   background-color: $c-dark;
   background-image: url("../img/slide1.jpg"), url("../img/slide2.jpg"), url("../img/slide3.jpg"), url("../img/slide4.jpg");
@@ -305,6 +318,10 @@
 
 .screen--prizes {
   background-color: $c-dark;
+
+  &.active ~ .screen__overlay {
+    animation: fullTranslateYBlock $m-animation-time ease;
+  }
 }
 
 .screen--game {
