@@ -254,6 +254,20 @@
   padding-left: 0;
   overflow: hidden;
 
+  &--animated {
+    overflow: visible;
+    animation-name: animationBtn;
+    animation-duration: $min-animation-time;
+    animation-fill-mode: forwards;
+
+    & > span {
+      animation-name: fadeIn;
+      animation-duration: $min-animation-time;
+      animation-delay: 0.2s;
+      animation-fill-mode: forwards;
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     bottom: 60px;
     right: 56px;
@@ -274,7 +288,7 @@
     right: 1.5rem;
   }
 
-  span {
+  & > span {
     opacity: 0;
   }
 }
