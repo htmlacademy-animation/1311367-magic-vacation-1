@@ -58,3 +58,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin scaleSizesAnimation(
+  $animation-name,
+  $widthOptions: ("0%", "110%", "100%"),
+  $heightOptions: ("0%", "110%", "100%"),
+  $breakpoints: ("0%", "75%", "100%"),
+) {
+  $i: 0;
+
+  @keyframes scaleSizes#{$animation-name} {
+    @each $breakpoint in $breakpoints {
+      #{$breakpoint} {
+        width: #{nth($widthOptions, $i + 1)};
+        height: #{nth($heightOptions, $i + 1)};
+      }
+
+      $i: $i + 1;
+    }
+  }
+
+  animation-name: scaleSizes#{$animation-name};
+}
