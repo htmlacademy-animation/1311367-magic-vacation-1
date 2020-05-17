@@ -29,13 +29,18 @@
 
   &::before {
     @include center;
+    @include scaleSizesAnimation("SocialToggler");
+
     content: "";
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
     transition: width $s-animation-time ease, height $s-animation-time ease;
-    animation: socialTogglerOverlay $min-animation-time cubic-bezier(0, 0, 0, 1) $min-animation-time both;
+    animation-duration: $min-animation-time;
+    animation-timing-function: ease;
+    animation-delay: $min-animation-time;
+    animation-fill-mode: both;
   }
 
   svg {

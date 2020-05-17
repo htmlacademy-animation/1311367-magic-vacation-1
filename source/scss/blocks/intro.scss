@@ -96,7 +96,7 @@
   animation-name: fadeIn, translateYText;
   animation-duration: $max-animation-time;
   animation-delay: $s-animation-time;
-  animation-timing-function: ease;
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
   animation-fill-mode: both;
 
   @media (min-width: $stop-scaling) {
