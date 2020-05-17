@@ -2789,6 +2789,16 @@ img {
   padding-right: 0;
   padding-left: 0;
   overflow: hidden; }
+  .rules__link--animated {
+    overflow: visible;
+    animation-name: animationBtn;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards; }
+    .rules__link--animated > span {
+      animation-name: fadeIn;
+      animation-duration: 0.35s;
+      animation-delay: 0.2s;
+      animation-fill-mode: forwards; }
   @media (min-width: 2000px) {
     .rules__link {
       bottom: 60px;
@@ -2805,7 +2815,7 @@ img {
     .rules__link {
       bottom: 2rem;
       right: 1.5rem; } }
-  .rules__link span {
+  .rules__link > span {
     opacity: 0; }
 
 .screen {
