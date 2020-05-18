@@ -1,9 +1,13 @@
-const splitText = ({ text = ``, delimiter = ` `, element = `span` }) => {
+const splitText = ({text = ``, delimiter = ` `, element = `span`, className}) => {
   const fragment = document.createDocumentFragment();
   const textArray = text.split(delimiter);
 
   textArray.forEach((item) => {
     const resultElement = document.createElement(element);
+
+    if (className) {
+      resultElement.classList.add(className);
+    }
 
     resultElement.textContent = item;
     fragment.appendChild(resultElement);
@@ -12,40 +16,61 @@ const splitText = ({ text = ``, delimiter = ` `, element = `span` }) => {
   return fragment;
 };
 
-const lettersBuilder = ({ node = null, settings = {}  }) => {
-  const isHTMLElement = node instanceof HTMLElement === true;
+const lettersBuilder = ({node = null, settings = {}}) => {
+  const isHTMLElement = node instanceof HTMLElement;
 
   if (!node || !isHTMLElement) {
-    return console.error(`Dom node is required. Dom element must be a HTMLElement`);
+    // eslint-disable-next-line no-console
+    return console.error(
+        `Dom node is required. Dom element must be a HTMLElement`
+    );
   }
 
-  const initialSettings = {};
-  const params = { ...initialSettings, ...settings };
+  const initialSettings = {speed: 50, activeClass: `animated-text`};
+  const params = {...initialSettings, ...settings};
   const nodeText = node.textContent;
-  const splittedTextByWords = splitText({ text: nodeText }).querySelectorAll(`span`);
+  const splittedTextByWords = splitText({text: nodeText, className: `word`}).querySelectorAll(
+      `span`
+  );
 
-  node.innerHTML = Array.from(splittedTextByWords).reduce((acc, currentElement, index, array) => {
-    const text = currentElement.textContent;
-    const result = splitText({ text, delimiter: `` });
+  let {speed} = initialSettings;
+  let counter = 0;
 
-    if (index !== array.length - 1) {
-      const spaceSpan = document.createElement(`span`);
+  node.innerHTML = Array.from(splittedTextByWords).reduce(
+      (acc, currentElement, index, array) => {
+        const text = currentElement.textContent;
+        const result = splitText({text, delimiter: ``});
 
-      spaceSpan.textContent = ` `;
-      result.appendChild(spaceSpan);
-    }
+        result.querySelectorAll(`span`).forEach((item) => {
+          item.style.transitionDelay = `${speed}ms`;
+          counter = counter + 1;
+          speed = params.speed + (counter % 2 !== 0 ? counter + params.speed * 2 : params.speed);
+        });
 
-    currentElement.innerHTML = ``;
-    currentElement.appendChild(result);
+        if (index !== array.length - 1) {
+          const spaceSpan = document.createElement(`span`);
 
-    return acc + currentElement.outerHTML;
-  }, ``);
+          spaceSpan.textContent = ` `;
+          result.appendChild(spaceSpan);
+        }
+
+        currentElement.innerHTML = ``;
+        currentElement.appendChild(result);
+
+        return acc + currentElement.outerHTML;
+      },
+      ``
+  );
 
   return {
     node,
     settings: params,
-    start: () => {},
-    stop: () => {},
+    runAnimation: () => {
+      node.classList.add(params.activeClass);
+    },
+    stopAnimation: () => {
+      node.classList.remove(params.activeClass);
+    },
   };
 };
 

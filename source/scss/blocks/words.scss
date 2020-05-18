@@ -1,0 +1,23 @@
+.word {
+  display: inline-block;
+  overflow: hidden;
+
+  > span {
+    transform: translate3d(0, 1.2em, 0);
+    display: inline-block;
+  }
+}
+
+.animated-text {
+  .word {
+    > span {
+      display: inline-block;
+      vertical-align: bottom;
+      line-height: 1.25;
+      transform: translate3d(0, 0, 0);
+      transition-property: transform;
+      transition-timing-function: ease;
+      transition-duration: $s-animation-time;
+    }
+  }
+}

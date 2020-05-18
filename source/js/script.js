@@ -27,9 +27,12 @@ rules();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
+const titleNode = document.querySelector(`.intro__title`);
 const lettersAnimation = lettersBuilder({
-  node: document.querySelector(`.intro__title`),
+  node: titleNode,
 });
 
-lettersAnimation.start();
+setTimeout(() => {
+  lettersAnimation.runAnimation();
+}, 0);
 
