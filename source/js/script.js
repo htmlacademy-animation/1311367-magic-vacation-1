@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import screen from './modules/screen.js';
 import rules from './modules/rules.js';
+import lettersBuilder from './modules/lettersBuilder.js';
 import FullPageScroll from './modules/full-page-scroll';
 
 // init modules
@@ -25,3 +26,10 @@ rules();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+const lettersAnimation = lettersBuilder({
+  node: document.querySelector(`.intro__title`),
+});
+
+lettersAnimation.start();
+
