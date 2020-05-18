@@ -26,7 +26,7 @@ const lettersBuilder = ({node = null, settings = {}}) => {
     );
   }
 
-  const initialSettings = {speed: 50, activeClass: `animated-text`};
+  const initialSettings = {speed: 80, activeClass: `animated-text`};
   const params = {...initialSettings, ...settings};
   const nodeText = node.textContent;
   const splittedTextByWords = splitText({text: nodeText, className: `word`}).querySelectorAll(

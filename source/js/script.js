@@ -28,11 +28,12 @@ const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
 const titleNode = document.querySelector(`.intro__title`);
+const pageHeader = document.querySelector(`.page-header`);
 const lettersAnimation = lettersBuilder({
   node: titleNode,
 });
 
-setTimeout(() => {
+pageHeader.onanimationstart = () => {
   lettersAnimation.runAnimation();
-}, 0);
+};
 
