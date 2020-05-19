@@ -3630,19 +3630,23 @@ img {
   overflow: hidden;
   vertical-align: text-bottom; }
   .word > span {
+    overflow: visible;
+    padding-top: 15px;
     transform: translate3d(0, 1.2em, 0);
     will-change: transform; }
 
-.animated-text .word > span {
-  display: inline-block;
-  vertical-align: text-bottom;
-  transform: translate3d(0, 0, 0);
-  transition-property: transform;
-  transition-timing-function: ease;
-  transition-duration: 0.5s; }
-
-.animated-text--finished .word {
-  overflow: visible; }
+.animated-text {
+  position: relative;
+  top: -15px; }
+  .animated-text .word > span {
+    display: inline-block;
+    vertical-align: text-bottom;
+    transform: translate3d(0, 0, 0);
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: 0.5s; }
+  .animated-text--finished .word {
+    overflow: visible; }
 
 
 /*# sourceMappingURL=style.min.css.map*/
