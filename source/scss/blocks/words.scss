@@ -4,12 +4,17 @@
   vertical-align: text-bottom;
 
   > span {
+    overflow: visible;
+    padding-top: 15px;
     transform: translate3d(0, 1.2em, 0);
     will-change: transform;
   }
 }
 
 .animated-text {
+  position: relative;
+  top: -15px;
+
   .word {
     > span {
       display: inline-block;
