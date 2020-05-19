@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import screen from './modules/screen.js';
 import rules from './modules/rules.js';
+import textAnimation from './modules/textAnimation.js';
 import FullPageScroll from './modules/full-page-scroll';
 
 // init modules
@@ -22,6 +23,7 @@ form();
 social();
 screen();
 rules();
+textAnimation();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
