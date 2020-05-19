@@ -28,7 +28,7 @@ const lettersBuilder = ({node = null, settings = {}}) => {
     );
   }
 
-  const initialSettings = {speed: 80, activeClass: `animated-text`};
+  const initialSettings = {speed: 80, activeClass: `animated-text`, finishedAnimationClass: `animated-text--finished`};
   const params = {...initialSettings, ...settings};
   const nodeText = node.textContent;
   const splittedTextByWords = splitText({text: nodeText, className: `word`}).querySelectorAll(
@@ -63,6 +63,12 @@ const lettersBuilder = ({node = null, settings = {}}) => {
       },
       ``
   );
+
+  const firstLetter = node.querySelector(`span`);
+
+  firstLetter.ontransitionend = () => {
+    node.classList.add(params.finishedAnimationClass);
+  };
 
   const startAnimation = () => {
     node.classList.add(params.activeClass);

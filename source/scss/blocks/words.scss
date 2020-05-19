@@ -20,4 +20,10 @@
       transition-duration: $s-animation-time;
     }
   }
+
+  &--finished {
+    .word {
+      overflow: visible;
+    }
+  }
 }

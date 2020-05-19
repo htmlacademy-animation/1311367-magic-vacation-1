@@ -13,7 +13,7 @@ export default () => {
     node: introDate,
   });
 
-  pageHeader.onanimationstart = () => {
+  pageHeader.onanimationend = () => {
     introTitleAnimation.runAnimation();
   };
 
