@@ -27,4 +27,3 @@ textAnimation();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
-

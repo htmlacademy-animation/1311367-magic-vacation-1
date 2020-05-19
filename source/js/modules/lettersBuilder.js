@@ -1,4 +1,4 @@
-import { sleep } from "./sleep";
+import {sleep} from "./sleep";
 
 const splitText = ({text = ``, delimiter = ` `, element = `span`, className}) => {
   const fragment = document.createDocumentFragment();
