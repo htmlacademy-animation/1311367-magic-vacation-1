@@ -1,3 +1,5 @@
+import { sleep } from "./sleep";
+
 const splitText = ({text = ``, delimiter = ` `, element = `span`, className}) => {
   const fragment = document.createDocumentFragment();
   const textArray = text.split(delimiter);
@@ -62,11 +64,25 @@ const lettersBuilder = ({node = null, settings = {}}) => {
       ``
   );
 
+  const startAnimation = () => {
+    node.classList.add(params.activeClass);
+  };
+
+  const delayedStartAnimation = async (delay) => {
+    await sleep(delay);
+
+    startAnimation();
+  };
+
   return {
     node,
     settings: params,
-    runAnimation: () => {
-      node.classList.add(params.activeClass);
+    runAnimation: (delay) => {
+      if (delay) {
+        delayedStartAnimation(delay);
+      } else {
+        startAnimation();
+      }
     },
     stopAnimation: () => {
       node.classList.remove(params.activeClass);

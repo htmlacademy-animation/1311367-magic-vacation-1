@@ -1,10 +1,11 @@
 .word {
   display: inline-block;
   overflow: hidden;
+  vertical-align: text-bottom;
 
   > span {
     transform: translate3d(0, 1.2em, 0);
-    display: inline-block;
+    will-change: transform;
   }
 }
 
@@ -12,8 +13,7 @@
   .word {
     > span {
       display: inline-block;
-      vertical-align: bottom;
-      line-height: 1.25;
+      vertical-align: text-bottom;
       transform: translate3d(0, 0, 0);
       transition-property: transform;
       transition-timing-function: ease;
