@@ -141,7 +141,7 @@
   animation-name: fadeIn;
   animation-duration: $l-animation-time;
   animation-delay: $s-animation-time;
-  animation-timing-function: cubic-bezier(0, 0, 0, 1);
+  animation-timing-function: ease;
   animation-fill-mode: both;
   animation-play-state: paused;
 }
@@ -184,11 +184,11 @@
   will-change: transform;
 
   &:first-child {
-    transform: translateX(-150%) rotate(-300deg);
+    transform: translateX(-100%) rotate(-300deg);
   }
 
   &:last-child {
-    transform: translateX(150%) rotate(300deg);
+    transform: translateX(100%) rotate(300deg);
   }
 
   @media (min-width: $stop-scaling) {
