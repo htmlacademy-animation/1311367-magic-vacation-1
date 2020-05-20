@@ -92,6 +92,7 @@ const lettersBuilder = ({node = null, settings = {}}) => {
     },
     stopAnimation: () => {
       node.classList.remove(params.activeClass);
+      node.classList.remove(params.finishedAnimationClass);
     },
   };
 };

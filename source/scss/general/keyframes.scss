@@ -63,3 +63,9 @@
     padding-left: 2.9rem;
   }
 }
+
+@keyframes rollIn {
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}

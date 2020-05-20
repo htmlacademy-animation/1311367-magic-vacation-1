@@ -1,21 +1,43 @@
 import lettersBuilder from './lettersBuilder.js';
 
+const createAnimation = (node, delay) => {
+  const titleAnimation = lettersBuilder({
+    node,
+  });
+
+  titleAnimation.stopAnimation();
+  titleAnimation.runAnimation(delay);
+};
+
 export default () => {
-  const introTitle = document.querySelector(`.intro__title`);
-  const introDate = document.querySelector(`.intro__date`);
-  const pageHeader = document.querySelector(`.page-header`);
+  const menuLinksCollection = document.querySelectorAll(`.js-menu-link`);
 
-  const introTitleAnimation = lettersBuilder({
-    node: introTitle,
-  });
+  const linkClickHandler = ({target}) => {
+    const {href} = target.dataset;
+    const screen = document.getElementById(href);
+    const titleTag = href === `top` ? `h1` : `h2`;
+    const title = screen.querySelector(titleTag);
+    const delay = href === `prizes` ? 750 : 250;
 
-  const introDateAnimation = lettersBuilder({
-    node: introDate,
-  });
+    createAnimation(title, delay);
 
-  pageHeader.onanimationend = () => {
-    introTitleAnimation.runAnimation();
+    if (href === `top`) {
+      const introDate = document.querySelector(`.intro__date`);
+
+      createAnimation(introDate, 750);
+    }
   };
 
-  introDateAnimation.runAnimation(750);
+  const pageLoadHandler = () => {
+    const {hash} = window.location;
+    const link = document.querySelector(`[href='${hash || `#top`}']`);
+
+    link.click();
+  };
+
+  menuLinksCollection.forEach((link) => {
+    link.addEventListener(`click`, linkClickHandler);
+  });
+
+  pageLoadHandler();
 };
