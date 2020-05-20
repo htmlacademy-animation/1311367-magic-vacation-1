@@ -64,30 +64,8 @@
   }
 }
 
-@keyframes rollInRight {
-  0% {
-    transform: translateX(150%) rotate(300deg);
-  }
-
-  55% {
-    transform: translateX(-10px) rotate(-45deg);
-  }
-
-  100% {
-    transform: translateX(0) rotate(0);
-  }
-}
-
-@keyframes rollInLeft {
-  0% {
-    transform: translateX(-150%) rotate(-300deg);
-  }
-
-  55% {
-    transform: translateX(10px) rotate(45deg);
-  }
-
-  100% {
+@keyframes rollIn {
+  to {
     transform: translateX(0) rotate(0);
   }
 }

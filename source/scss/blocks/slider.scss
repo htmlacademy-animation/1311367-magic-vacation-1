@@ -173,21 +173,22 @@
   overflow: hidden;
   color: $c-dark;
   border-radius: 50%;
+  animation-name: rollIn;
   animation-duration: $l-animation-time;
   animation-delay: $min-animation-time;
   animation-iteration-count: 1;
   animation-direction: alternate;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.05, 0.6, 0.3, 0.8);
+  animation-timing-function: cubic-bezier(0.8, 0.2, 0, 1.4);
   animation-play-state: paused;
   will-change: transform;
 
   &:first-child {
-    animation-name: rollInLeft;
+    transform: translateX(-150%) rotate(-300deg);
   }
 
   &:last-child {
-    animation-name: rollInRight;
+    transform: translateX(150%) rotate(300deg);
   }
 
   @media (min-width: $stop-scaling) {
