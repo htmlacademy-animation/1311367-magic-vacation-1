@@ -24,8 +24,9 @@ form();
 social();
 screen();
 rules();
-//prizes();
+prizes();
 textAnimation();
 
 const fullPageScroll = new FullPageScroll();
+
 fullPageScroll.init();

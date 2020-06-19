@@ -233,6 +233,42 @@
   </g>
 
   <g id="chair" transform="translate(0 35)">
+    <defs>
+      <clipPath id="clipPath">
+        <path d="M 220.60161,154.68747 H 203.30849 A 17.767602,17.439578 0 0 1 185.62164,137.26771 V 99.762704 a 17.767602,17.439578 0 0 1 17.68685,-17.41976 h 17.29312 a 17.767602,17.439578 0 0 1 17.67675,17.41976 v 37.485186 a 17.777696,17.449488 0 0 1 -17.67675,17.43958 z" />
+      </clipPath>
+    </defs>
+
+    <g clip-path="url(#clipPath)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" opacity="0">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        from="300, 60"
+        to="-80, 60"
+        dur="1.5s"
+        begin="3s"
+        fill="freeze"
+        id="windowCloudTransform"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        attributeType="XML"
+        from="0"
+        to="1"
+        fill="freeze"
+        begin="dirigibleOpacity.end-0.2s"
+        dur="0.1s"
+        id="windowCloudOpacity"
+      />
+      <path d="M28.18 38.34h62.91"/>
+      <path d="M1 28.08h35.29a12.4 12.4 0 1124.8 0h17.93"/>
+      <path d="M218.19 23.72h39.78"/>
+      <path d="M237.98 13.45h-27.36a12.4 12.4 0 10-24.8 0h-17.94"/>
+      <path d="M246.24 13.45h22.19"/>
+    </g>
+
     <path d="M220.52 120.53h-17.13a17.6 17.6 0 01-17.52-17.58V65.1a17.6 17.6 0 0117.52-17.58h17.13a17.6 17.6 0 0117.51 17.58v37.83a17.61 17.61 0 01-17.51 17.6z" fill="none" stroke="#fff" stroke-width="2" opacity="0">
       <animate
         attributeName="opacity"
@@ -319,7 +355,6 @@
       <path d="M151.78 154.92h-72l-2.13-14.19h68.47a9.92 9.92 0 019.9 9.93 4.26 4.26 0 01-4.24 4.26z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
       <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M97.08 90.54h57.49"/>
     </g>
-
     <g id="tree" opacity="0">
       <animate
         attributeName="opacity"
@@ -363,41 +398,6 @@
       <path d="M54.42 175.79a118.21 118.21 0 0126.54 13.47 213.62 213.62 0 01-28.23-8 221.65 221.65 0 01-26.55-11.57 113.82 113.82 0 0128.24 6.08" fill="#068e4d"/>
       <path d="M86.52 159.36a236.09 236.09 0 00-5.58 29.9 117.46 117.46 0 0011.15-27.73 127.2 127.2 0 004-31 214.24 214.24 0 00-9.57 28.83" fill="#068e4d"/>
       <path d="M38.14 112.77A529.26 529.26 0 0195 223.1" fill="none" stroke="#36e69a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    </g>
-
-    <defs>
-      <clipPath id="a" transform="translate(0 -70)">
-        <path d="M275 225.43h-17.13a17.6 17.6 0 01-17.52-17.58V170a17.6 17.6 0 0117.52-17.58H275A17.6 17.6 0 01292.51 170v37.83a17.61 17.61 0 01-17.51 17.6z" transform="translate(-54.48 -104.9)"/>
-      </clipPath>
-    </defs>
-    <g clip-path="url(#a)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" transform="translate(0 70)" opacity="0">
-      <animateTransform
-        attributeName="transform"
-        attributeType="XML"
-        type="translate"
-        from="260, 60"
-        to="100, 60"
-        dur="1.5s"
-        begin="3s"
-        fill="freeze"
-        id="windowCloudTransform"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="opacity"
-        attributeType="XML"
-        from="0"
-        to="1"
-        fill="freeze"
-        begin="dirigibleOpacity.end-0.2s"
-        dur="0.1s"
-        id="windowCloudOpacity"
-      />
-      <path d="M28.18 38.34h62.91"/>
-      <path d="M1 28.08h35.29a12.4 12.4 0 1124.8 0h17.93"/>
-      <path d="M218.19 23.72h39.78"/>
-      <path d="M237.98 13.45h-27.36a12.4 12.4 0 10-24.8 0h-17.94"/>
-      <path d="M246.24 13.45h22.19"/>
     </g>
   </g>
 
