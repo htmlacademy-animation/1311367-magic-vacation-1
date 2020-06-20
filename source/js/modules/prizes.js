@@ -11,8 +11,8 @@ export default () => {
 
   $screenOverlay.onanimationend = () => {
     $prizesJourneysIcon.innerHTML = `<picture>
-      <source srcset="/img/primary-award-from.svg" media="(orientation: portrait)">
-      <img src="/img/primary-award-from.svg?v=${uuid()}" alt="">
+      <source srcset="img/primary-award-from.svg?v=${uuid()}" media="(orientation: portrait)">
+      <img src="img/primary-award-from.svg?v=${uuid()}" alt="">
     </picture>`;
   };
 };
