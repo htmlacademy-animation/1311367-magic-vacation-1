@@ -10357,6 +10357,32 @@ class FullPageScroll {
 
 /***/ }),
 
+/***/ "./source/js/modules/generateId.js":
+/*!*****************************************!*\
+  !*** ./source/js/modules/generateId.js ***!
+  \*****************************************/
+/*! exports provided: uuid, id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "id", function() { return id; });
+/* eslint-disable no-bitwise */
+
+const uuid = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16),
+  );
+
+const id = () => `f${(~~(Math.random() * 1e8)).toString(16)}`;
+
+
+/***/ }),
+
 /***/ "./source/js/modules/lettersBuilder.js":
 /*!*********************************************!*\
   !*** ./source/js/modules/lettersBuilder.js ***!
@@ -10542,7 +10568,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-let currentVersion = 0;
+/* harmony import */ var _generateId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generateId */ "./source/js/modules/generateId.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const $screenOverlay = document.querySelector(`.screen__overlay`);
@@ -10555,11 +10582,9 @@ let currentVersion = 0;
 
   $screenOverlay.onanimationend = () => {
     $prizesJourneysIcon.innerHTML = `<picture>
-      <source srcset="/img/primary-award-from.svg" media="(orientation: portrait)">
-      <img src="/img/primary-award-from.svg?v=${currentVersion}" alt="">
+      <source srcset="img/primary-award-from.svg?v=${Object(_generateId__WEBPACK_IMPORTED_MODULE_0__["uuid"])()}" media="(orientation: portrait)">
+      <img src="img/primary-award-from.svg?v=${Object(_generateId__WEBPACK_IMPORTED_MODULE_0__["uuid"])()}" alt="">
     </picture>`;
-
-    currentVersion += 1;
   };
 });
 

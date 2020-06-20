@@ -1,4 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.43 260.54">
+  <defs>
+    <clipPath id="clipPath">
+      <path d="M 220.60161,154.68747 H 203.30849 A 17.767602,17.439578 0 0 1 185.62164,137.26771 V 99.762704 a 17.767602,17.439578 0 0 1 17.68685,-17.41976 h 17.29312 a 17.767602,17.439578 0 0 1 17.67675,17.41976 v 37.485186 a 17.777696,17.449488 0 0 1 -17.67675,17.43958 z" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clipPath)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" opacity="0" id="windowWithClouds">
+    <animate
+      attributeName="opacity"
+      attributeType="XML"
+      from="0"
+      to="1"
+      fill="freeze"
+      begin="dirigibleOpacity.end-0.2s"
+      dur="0.1s"
+      id="windowCloudOpacity"
+    />
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        from="300, 95"
+        to="-80, 95"
+        dur="1.75s"
+        begin="3s"
+        fill="freeze"
+        id="windowCloudTransform"
+        repeatCount="indefinite"
+      />
+      <path d="M28.18 38.34h62.91"/>
+      <path d="M1 28.08h35.29a12.4 12.4 0 1124.8 0h17.93"/>
+      <path d="M218.19 23.72h39.78"/>
+      <path d="M237.98 13.45h-27.36a12.4 12.4 0 10-24.8 0h-17.94"/>
+      <path d="M246.24 13.45h22.19"/>
+    </g>
+  </g>
+
   <g id="dirigible" opacity="1">
     <animate
       attributeName="opacity"
@@ -18,7 +56,7 @@
         to="1"
         fill="freeze"
         begin="0s"
-        dur="0.5s"
+        dur="0.35s"
         id="fadeInClouds"
       />
       <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" id="cloudLeft" transform="translate(180, 15)">
@@ -26,10 +64,10 @@
           attributeName="transform"
           attributeType="XML"
           type="translate"
-          from="200, 15"
+          from="180, 15"
           to="-40, 15"
           dur="2.5s"
-          begin="fadeInClouds.end"
+          begin="fadeInClouds.end - 0.25s"
           fill="freeze"
           id="cloudLeftTransform"
         />
@@ -233,42 +271,6 @@
   </g>
 
   <g id="chair" transform="translate(0 35)">
-    <defs>
-      <clipPath id="clipPath">
-        <path d="M 220.60161,154.68747 H 203.30849 A 17.767602,17.439578 0 0 1 185.62164,137.26771 V 99.762704 a 17.767602,17.439578 0 0 1 17.68685,-17.41976 h 17.29312 a 17.767602,17.439578 0 0 1 17.67675,17.41976 v 37.485186 a 17.777696,17.449488 0 0 1 -17.67675,17.43958 z" />
-      </clipPath>
-    </defs>
-
-    <g clip-path="url(#clipPath)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" opacity="0">
-      <animateTransform
-        attributeName="transform"
-        attributeType="XML"
-        type="translate"
-        from="300, 60"
-        to="-80, 60"
-        dur="1.5s"
-        begin="3s"
-        fill="freeze"
-        id="windowCloudTransform"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="opacity"
-        attributeType="XML"
-        from="0"
-        to="1"
-        fill="freeze"
-        begin="dirigibleOpacity.end-0.2s"
-        dur="0.1s"
-        id="windowCloudOpacity"
-      />
-      <path d="M28.18 38.34h62.91"/>
-      <path d="M1 28.08h35.29a12.4 12.4 0 1124.8 0h17.93"/>
-      <path d="M218.19 23.72h39.78"/>
-      <path d="M237.98 13.45h-27.36a12.4 12.4 0 10-24.8 0h-17.94"/>
-      <path d="M246.24 13.45h22.19"/>
-    </g>
-
     <path d="M220.52 120.53h-17.13a17.6 17.6 0 01-17.52-17.58V65.1a17.6 17.6 0 0117.52-17.58h17.13a17.6 17.6 0 0117.51 17.58v37.83a17.61 17.61 0 01-17.51 17.6z" fill="none" stroke="#fff" stroke-width="2" opacity="0">
       <animate
         attributeName="opacity"
@@ -315,6 +317,15 @@
         begin="skiingTransform.end - 0.15s"
         fill="freeze"
         id="skiingTransform"
+      />
+      <animateTransform
+        begin="treeTransform.end"
+        attributeName="transform"
+        type="rotate"
+        values="0 5 10; 1 5 5; 0 5 10"
+        dur="1s"
+        additive="sum"
+        repeatDur="indefinite"
       />
       <path d="M36.66 222.89a2.2 2.2 0 01-2-2.36L48.32 27.36c1.1-15.49-4.8-21.92-8.75-24.47A1.35 1.35 0 0140.1.44C48.52-.9 67.7-.9 65.52 29.29L51.95 221.77a2.2 2.2 0 01-2.35 2z" fill="#fff"/>
       <path d="M70.02 223.27a2.2 2.2 0 01-2.17-2.23l2.24-193.63C70.28 11.88 64.02 5.8 59.93 3.5a1.35 1.35 0 01.39-2.47c8.36-1.9 27.49-3 27.15 27.28l-2.25 192.93a2.2 2.2 0 01-2.22 2.18z" fill="#fff"/>
