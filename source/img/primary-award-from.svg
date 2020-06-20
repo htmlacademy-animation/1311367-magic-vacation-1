@@ -56,7 +56,7 @@
         to="1"
         fill="freeze"
         begin="0s"
-        dur="0.5s"
+        dur="0.35s"
         id="fadeInClouds"
       />
       <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" id="cloudLeft" transform="translate(180, 15)">
@@ -64,10 +64,10 @@
           attributeName="transform"
           attributeType="XML"
           type="translate"
-          from="200, 15"
+          from="180, 15"
           to="-40, 15"
           dur="2.5s"
-          begin="fadeInClouds.end"
+          begin="fadeInClouds.end - 0.25s"
           fill="freeze"
           id="cloudLeftTransform"
         />
