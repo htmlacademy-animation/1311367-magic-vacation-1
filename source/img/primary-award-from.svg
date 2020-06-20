@@ -316,6 +316,15 @@
         fill="freeze"
         id="skiingTransform"
       />
+      <animateTransform
+        begin="treeTransform.end"
+        attributeName="transform"
+        type="rotate"
+        values="0 5 10; 1 5 5; 0 5 10"
+        dur="1s"
+        additive="sum"
+        repeatDur="indefinite"
+      />
       <path d="M36.66 222.89a2.2 2.2 0 01-2-2.36L48.32 27.36c1.1-15.49-4.8-21.92-8.75-24.47A1.35 1.35 0 0140.1.44C48.52-.9 67.7-.9 65.52 29.29L51.95 221.77a2.2 2.2 0 01-2.35 2z" fill="#fff"/>
       <path d="M70.02 223.27a2.2 2.2 0 01-2.17-2.23l2.24-193.63C70.28 11.88 64.02 5.8 59.93 3.5a1.35 1.35 0 01.39-2.47c8.36-1.9 27.49-3 27.15 27.28l-2.25 192.93a2.2 2.2 0 01-2.22 2.18z" fill="#fff"/>
     </g>
