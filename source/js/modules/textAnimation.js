@@ -1,4 +1,5 @@
 import lettersBuilder from './lettersBuilder.js';
+import {possibleHashOptions} from "../constants";
 
 const createAnimation = (node, delay) => {
   const titleAnimation = lettersBuilder({
@@ -15,9 +16,9 @@ export default () => {
   const linkClickHandler = ({target}) => {
     const {href} = target.dataset;
     const screen = document.getElementById(href);
-    const titleTag = href === `top` ? `h1` : `h2`;
+    const titleTag = href === possibleHashOptions.top ? `h1` : `h2`;
     const title = screen.querySelector(titleTag);
-    const delay = href === `prizes` ? 750 : 250;
+    const delay = href === possibleHashOptions.prizes ? 750 : 250;
 
     createAnimation(title, delay);
 
@@ -30,7 +31,7 @@ export default () => {
 
   const pageLoadHandler = () => {
     const {hash} = window.location;
-    const link = document.querySelector(`[href='${hash || `#top`}']`);
+    const link = document.querySelector(`[href='${hash || `#${possibleHashOptions.top}`}']`);
 
     link.click();
   };
