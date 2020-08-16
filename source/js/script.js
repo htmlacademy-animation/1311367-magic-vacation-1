@@ -12,6 +12,7 @@ import rules from './modules/rules.js';
 import prizes from './modules/prizes.js';
 import textAnimation from './modules/textAnimation.js';
 import FullPageScroll from './modules/full-page-scroll';
+import hashchange from './modules/hashchange';
 
 // init modules
 mobileHeight();
@@ -26,6 +27,7 @@ screen();
 rules();
 prizes();
 textAnimation();
+hashchange();
 
 const fullPageScroll = new FullPageScroll();
 
