@@ -2,6 +2,7 @@ import {possibleHashOptions} from '../constants';
 import timerBuilder from './timer';
 
 export default () => {
+  const messageField = document.getElementById(`message-field`);
   const timer = timerBuilder();
   const handlerHashChange = () => {
     const {hash} = window.location;
@@ -9,7 +10,12 @@ export default () => {
 
     switch (transformedHash) {
       case possibleHashOptions.game:
-        return timer.start();
+
+        messageField.onanimationend = () => {
+          timer.start();
+        };
+
+        return null;
       case possibleHashOptions.story:
       case possibleHashOptions.prizes:
       case possibleHashOptions.rules:
@@ -21,4 +27,5 @@ export default () => {
   };
 
   window.addEventListener(`hashchange`, handlerHashChange, false);
+  handlerHashChange();
 };
