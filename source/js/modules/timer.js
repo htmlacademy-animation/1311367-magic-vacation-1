@@ -30,7 +30,6 @@ const timerBuilder = ({initialMinutes = 5} = {}) => {
     }
   };
 
-
   const tick = (finishTimeOfGame) => {
     const dateNow = Date.now();
 
